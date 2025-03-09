@@ -9,4 +9,4 @@ markdown: kramdown
 
 # Navigation Links
 header_pages:
-  - index.md
+  - index.html
