@@ -1,11 +1,12 @@
-lsi: false
-safe: true
-source: main
-incremental: false
-highlighter: rouge
-gist:
-nonscript: false
-kramdown:
-math_engine: mathjax
-syntax_highlighter: rouge
-theme: jekyll-theme-minimal
+title: Sunmi Jung
+description: 
+author:
+baseurl: ""
+url: https://sunmijung.github.io
+theme: minima
+show_excerpts: true
+markdown: kramdown
+
+# Navigation Links
+header_pages:
+  - index.md
