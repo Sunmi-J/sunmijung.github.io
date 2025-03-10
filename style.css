@@ -62,3 +62,23 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.custom-link {
+    color: #d35400; /* Change to your preferred color */
+    text-decoration: none; /* Optional: Removes underline */
+}
+
+.custom-link:hover {
+    text-decoration: underline; /* Adds underline on hover */
+    color: #e67e22; /* Changes color when hovered */
+}
+
+.custom-link-paper {
+    color: #807c79; /* Change to your preferred color */
+    text-decoration: none; /* Optional: Removes underline */
+}
+
+.custom-link-paper:hover {
+    color: #292623; /* Change to your preferred color */
+    text-decoration: underline; 
+}
