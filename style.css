@@ -30,7 +30,7 @@ body {
 .left img {
     width: 150px; /* Adjust as needed */
     height: auto;
-    border-radius: 50%; /* Circular photo */
+    border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -42,6 +42,7 @@ body {
 h1 {
     margin: 0;
     font-size: 28px;
+    color: #292623
 }
 
 h2 {
@@ -55,12 +56,16 @@ p {
 }
 
 a {
-    color: #0073e6;
+    color: #7f82eb;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+ul {
+    list-style-type: square; /* Bullet points as squares instead of circles */
 }
 
 .custom-link {
@@ -70,15 +75,13 @@ a:hover {
 
 .custom-link:hover {
     text-decoration: underline; /* Adds underline on hover */
-    color: #e67e22; /* Changes color when hovered */
 }
 
 .custom-link-paper {
-    color: #807c79; /* Change to your preferred color */
+    color: #cacadb; /* Change to your preferred color */
     text-decoration: none; /* Optional: Removes underline */
 }
 
 .custom-link-paper:hover {
-    color: #292623; /* Change to your preferred color */
     text-decoration: underline; 
 }
