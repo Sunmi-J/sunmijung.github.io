@@ -55,6 +55,11 @@ p {
 }
 
 a {
+    color: #3356d4;
+    text-decoration: none;
+}
+
+a1 {
     color: #ababab;
     text-decoration: none;
 }
