@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Source Sans Pro, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,12 +11,11 @@ body {
 
 .container {
     display: flex;
-    width: 80%;
-    max-width: 900px;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 10px;
+    width: 100%;
+    max-width: none;
+    background: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 .left {
