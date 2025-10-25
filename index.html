@@ -2,59 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Sunmi Jung</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Minimal responsive safety nets (keep or merge into style.css) */
-    /* make images scale and never crop */
+    /* Make images scale and never crop */
     img {
       max-width: 100%;
       height: auto !important;
-      object-fit: contain !important;   /* show whole image */
-    }
-    
-    /* avoid flex overflow cutting content on small screens */
-    .right { min-width: 0; }
-    .left  { min-width: 0; }
-    
-    /* 1) Never crop the portrait */
-    .left img {
+      object-fit: contain !important;
       display: block;
-      max-width: 100%;
-      width: min(55vw, 220px);
-      height: auto !important;
-      object-fit: contain !important;   /* show whole image */
     }
-    
-    /* 2) Make sure nothing is clipping it */
-    .left, .container, .right, body, html {
+
+    /* Responsive column layout */
+    .container {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .left, .right { min-width: 0; }
+
+    /* Portrait size rules (mobile + desktop friendly) */
+    .left img {
+      width: min(55vw, 220px);
+    }
+
+    /* Prevent clipping */
+    .left, .right, .container, body, html {
       overflow: visible !important;
     }
-    .left, .right { min-width: 0; }     /* avoid flex overflow clipping */
-    
-    /* 3) Add safe-area padding on iPhone (notch) so the top isn't hidden */
-    :root {
-      --safe-top: env(safe-area-inset-top, 0px);
-      --safe-right: env(safe-area-inset-right, 0px);
-      --safe-bottom: env(safe-area-inset-bottom, 0px);
-      --safe-left: env(safe-area-inset-left, 0px);
-    }
+
+    /* iPhone safe-area support */
+    html, body { margin: 0; }
     body {
-      padding-top: calc(var(--safe-top) + 8px);
-      padding-right: var(--safe-right);
-      padding-left: var(--safe-left);
+      padding-top: calc(env(safe-area-inset-top) + 8px);
+      padding-right: env(safe-area-inset-right);
+      padding-left: env(safe-area-inset-left);
     }
-    
-    /* Optional: tighter spacing on small screens */
+
+    /* Stacks layout on phones */
     @media (max-width: 768px) {
       .container { flex-direction: column; gap: 16px; }
     }
+
+    /* Formatting tweaks */
     .coauthors { opacity: 0.85; }
     .custom-link, .custom-link-paper { text-decoration: none; }
     .custom-link:hover, .custom-link-paper:hover { text-decoration: underline; }
     ul { padding-left: 1.1rem; }
-    li p { margin: 0.25rem 0; } /* tighten vertical gaps */
+    li p { margin: 0.25rem 0; }
   </style>
 </head>
 <body>
@@ -68,7 +64,7 @@
         <a href="https://www.econ.pitt.edu/" class="custom-link">economics</a> at
         <a href="https://www.pitt.edu/" class="custom-link">University of Pittsburgh</a>.
       </p>
-    </div> <!-- close .left ✅ -->
+    </div>
 
     <div class="right">
       <h2>Publication</h2>
@@ -102,12 +98,8 @@
 
       <h2>Work in Progress</h2>
       <ul>
-        <li>
-          <p>"Sites of Settlement and Extraction in the American City" <span class="coauthors">(w/ Omer Ali)</span></p>
-        </li>
-        <li>
-          <p>"Persistence of Social Norms in the Face of Economic Crises" <span class="coauthors">(w/ Arifah Hasanbasri)</span></p>
-        </li>
+        <li><p>"Sites of Settlement and Extraction in the American City" <span class="coauthors">(w/ Omer Ali)</span></p></li>
+        <li><p>"Persistence of Social Norms in the Face of Economic Crises" <span class="coauthors">(w/ Arifah Hasanbasri)</span></p></li>
       </ul>
 
       <h2>CV</h2>
@@ -115,8 +107,8 @@
 
       <h2>Contact</h2>
       <p>Email: sunmijung@pitt.edu</p>
-    </div> <!-- close .right -->
-  </div> <!-- close .container ✅ -->
+    </div>
+  </div>
 
 </body>
 </html>
