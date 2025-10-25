@@ -18,18 +18,37 @@
     .right { min-width: 0; }
     .left  { min-width: 0; }
     
-    /* sensible desktop size for the portrait, but still fluid on phones */
+    /* 1) Never crop the portrait */
     .left img {
-      width: min(55vw, 220px);          /* shrinks on small screens, caps on desktop */
-      height: auto !important;          /* ensure no fixed height applies */
       display: block;
+      max-width: 100%;
+      width: min(55vw, 220px);
+      height: auto !important;
+      object-fit: contain !important;   /* show whole image */
     }
     
-    /* if any ancestor was hiding overflow, stop that on mobile */
+    /* 2) Make sure nothing is clipping it */
+    .left, .container, .right, body, html {
+      overflow: visible !important;
+    }
+    .left, .right { min-width: 0; }     /* avoid flex overflow clipping */
+    
+    /* 3) Add safe-area padding on iPhone (notch) so the top isn't hidden */
+    :root {
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-right: env(safe-area-inset-right, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --safe-left: env(safe-area-inset-left, 0px);
+    }
+    body {
+      padding-top: calc(var(--safe-top) + 8px);
+      padding-right: var(--safe-right);
+      padding-left: var(--safe-left);
+    }
+    
+    /* Optional: tighter spacing on small screens */
     @media (max-width: 768px) {
-      .left, .right, .container, body, html {
-        overflow-x: visible !important;
-      }
+      .container { flex-direction: column; gap: 16px; }
     }
     .coauthors { opacity: 0.85; }
     .custom-link, .custom-link-paper { text-decoration: none; }
